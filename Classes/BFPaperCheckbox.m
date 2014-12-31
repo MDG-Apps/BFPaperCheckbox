@@ -346,15 +346,6 @@ static NSString *const mark_eraseLongLine = @"largeCheckmarkLine2";
         tapCircle.fillColor = (!self.tapCirclePositiveColor) ? [self.checkmarkColor colorWithAlphaComponent:bfPaperCheckbox_tapFillConstant].CGColor : self.tapCirclePositiveColor.CGColor;
     }
 
-    
-    // Add tap circle to array and view:
-    [self.rippleAnimationQueue addObject:tapCircle];
-    [self.layer insertSublayer:tapCircle atIndex:0];
-    
-    
-    /*
-     * Animations:
-     */
     // Grow tap-circle animation (performed on mask layer):
     CABasicAnimation *tapCircleGrowthAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     tapCircleGrowthAnimation.delegate = self;
